@@ -20,6 +20,7 @@ import java.text.NumberFormat;
 /**
  * This app displays an order form to order coffee.
  * Anne was here on Sun 25 Feb 2018 at 5:10 pm testing out how to use Git and GitHub with Android Studio
+ * 
  * https://stackoverflow.com/questions/37093723/how-to-add-an-android-studio-project-to-github
  *
  */
