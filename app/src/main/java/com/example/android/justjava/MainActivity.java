@@ -4,6 +4,8 @@
  * package com.example.android.justjava
  * If you get an error when copying this code into Android studio, update it to match the package name found
  * in the project's AndroidManifest.xml file.
+ *
+ * Anne was here on Sun 25 Feb 2018 at 5:17 pm testing out how to use Git and GitHub with Android Studio
  **/
 
 package com.example.android.justjava;
