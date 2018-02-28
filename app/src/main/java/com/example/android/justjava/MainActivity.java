@@ -27,6 +27,7 @@ import java.text.NumberFormat;
  *
  */
 public class MainActivity extends AppCompatActivity {
+    int quantity = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,4 +59,50 @@ public class MainActivity extends AppCompatActivity {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
     }
+
+    public void increment(View view) {
+
+        quantity = quantity + 1;
+        display(quantity);
+    }
+
+    public void decrement(View view) {
+        quantity = quantity - 1;
+        display(quantity);
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
