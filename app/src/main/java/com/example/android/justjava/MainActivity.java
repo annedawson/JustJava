@@ -27,7 +27,7 @@ import java.text.NumberFormat;
  *
  */
 public class MainActivity extends AppCompatActivity {
-    int quantity = 2;
+    int quantity = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +39,8 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        int numberCoffees = 3;
-        display(numberCoffees);
-        displayPrice(numberCoffees * 5);
+        String priceMessage = "Total $" + quantity * 5 + "\nThank you!";
+        displayMessage(priceMessage);
     }
 
     /**
@@ -71,6 +70,13 @@ public class MainActivity extends AppCompatActivity {
         display(quantity);
     }
 
+    /**
+     * This method displays the given text on the screen.
+     */
+    private void displayMessage(String message) {
+        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
+        priceTextView.setText(message);
+    }
 }
 
 
