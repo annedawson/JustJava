@@ -35,47 +35,82 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+
+    /**
+     * This method creates a summary of the order
+     *
+     * @param priceOfOrder of the order
+     * @return text summary
+     */
+    private String createOrderSummary(int priceOfOrder){
+        String summary = "Name: Captain Kunal\nQuantity: " + quantity + "\nTotal: $" + priceOfOrder +  "\nThank you!";
+        return summary;
+    }
+
+
+
     /**
      * This method is called when the order button is clicked.
+     * note: has to be public
      */
     public void submitOrder(View view) {
-        String priceMessage = "Total $" + quantity * 5 + "\nThank you!";
-        displayMessage(priceMessage);
+        int price = calculatePrice();
+        String summary;
+        String priceMessage = "Total $" + price + "\nThank you!";
+        //displayMessage(priceMessage);
+        summary = createOrderSummary(price);
+        displayMessage(summary);
     }
+
+
+
+    /**
+     * This method calculates the price of the order
+     *
+     * @return total price
+     */
+    private int calculatePrice() {
+
+        int price = quantity * 5;
+        return price;
+    }
+
 
     /**
      * This method displays the given quantity value on the screen.
      */
-    private void display(int number) {
+    private void displayQuantity(int numberOfCoffees) {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
-        quantityTextView.setText("" + number);
+        quantityTextView.setText("" + numberOfCoffees);
     }
+
+
 
     /**
-     * This method displays the given price on the screen.
+     * This method increases quantity by 1
+     * note: has to be public
      */
-    private void displayPrice(int number) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
-    }
-
     public void increment(View view) {
 
         quantity = quantity + 1;
-        display(quantity);
+        displayQuantity(quantity);
     }
 
+    /**
+     * This method decreases quantity by 1
+     * note: has to be public
+     */
     public void decrement(View view) {
         quantity = quantity - 1;
-        display(quantity);
+        displayQuantity(quantity);
     }
 
     /**
      * This method displays the given text on the screen.
      */
     private void displayMessage(String message) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(message);
+        TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
+        orderSummaryTextView.setText(message);
     }
 }
 
